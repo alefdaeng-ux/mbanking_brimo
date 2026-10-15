@@ -1,0 +1,61 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="36dp"
+    android:height="36dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- FRAME SCANNER KOTAK -->
+    <!-- Top-Left -->
+    <path
+        android:strokeColor="@color/white"
+        android:strokeWidth="5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M 35,15 L 20,15 Q 15,15 15,20 L 15,35" />
+
+    <!-- Top-Right -->
+    <path
+        android:strokeColor="@color/white"
+        android:strokeWidth="5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M 65,15 L 80,15 Q 85,15 85,20 L 85,35" />
+
+    <!-- Bottom-Left -->
+    <path
+        android:strokeColor="@color/white"
+        android:strokeWidth="5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M 35,85 L 20,85 Q 15,85 15,80 L 15,65" />
+
+    <!-- Bottom-Right -->
+    <path
+        android:strokeColor="@color/white"
+        android:strokeWidth="5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M 65,85 L 80,85 Q 85,85 85,80 L 85,65" />
+
+    <!-- TEKS QRIS (Disesuaikan skala & posisinya ke tengah frame) -->
+    <!-- Grup ini di-scale mengecil dan di-translate ke tengah 100x100 canvas -->
+    <group
+        android:scaleX="0.2"
+        android:scaleY="0.2"
+        android:translateX="20"
+        android:translateY="40">
+
+        <path
+            android:fillColor="@color/white"
+            android:pathData="M 287.71,67.86 L 287.71,58.33 L 287.71,39.29 L 259.14,39.29 L 240.09,39.29 L 240.09,29.76 L 287.71,29.76 L 287.71,10.71 L 240.09,10.71 L 211.52,10.71 L 211.52,29.76 L 211.52,39.29 L 211.52,58.33 L 240.09,58.33 L 259.14,58.33 L 259.14,67.86 L 211.52,67.86 L 211.52,86.91 L 259.14,86.91 L 287.71,86.91 Z
+            M 182.95,10.71 h 19.05 v 76.19 h -19.05 Z
+            M 97.24,10.71 L 97.24,29.76 L 154.38,29.76 L 154.38,39.29 L 116.28,39.29 L 97.24,39.29 L 97.24,58.33 L 97.24,86.91 L 116.28,86.91 L 116.28,58.62 L 144.86,86.91 L 173.43,86.91 L 143.62,58.33 L 154.38,58.33 L 173.43,58.33 L 173.43,39.29 L 173.43,29.76 L 173.43,10.71 L 154.38,10.71 Z
+            M 40.09,58.33 h 19 v -19 h -19 Z m 4.77,-14.28 h 9.52 v 9.52 h -9.52 Z
+            M 30.57,10.71 H 13.9 a 2.41,2.41 0 0 0 -1.68,0.7 a 2.38,2.38 0 0 0 -0.7,1.69 V 84.52 a 2.38,2.38 0 0 0 0.7,1.69 a 2.4,2.4 0 0 0 1.68,0.69 H 59.14 v -19 H 30.57 Z
+            M 85.33,10.71 H 40.09 V 29.76 H 68.67 V 58.33 h 19 V 13.1 A 2.41,2.41 0 0 0 87,11.41 A 2.44,2.44 0 0 0 85.33,10.71 Z
+            M 68.67,67.86 h 19.05 v 42.86 h -19.05 Z
+            M 38.1,0 H 2.38 A 2.39,2.39 0 0 0 0,2.38 V 38.1 H 4.76 v -31 A 2.39,2.39 0 0 1 7.14,4.76 h 31 Z
+            M 295.24,61.9 v 31 a 2.39,2.39 0 0 1 -2.38,2.38 h -31 V 100 h 35.72 A 2.39,2.39 0 0 0 300,97.62 V 61.9 Z" />
+    </group>
+
+</vector>

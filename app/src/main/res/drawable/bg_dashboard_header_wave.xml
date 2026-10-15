@@ -1,0 +1,25 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="360dp"
+    android:height="150dp"
+    android:viewportWidth="360"
+    android:viewportHeight="150">
+
+    <!-- Gradient Curved Wave Header aligning with "Semua Rekeningmu" -->
+    <path
+        android:pathData="M0,0 H360 V95 C260,135 100,135 0,95 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="180"
+                android:startY="0"
+                android:endX="180"
+                android:endY="150"
+                android:type="linear">
+                <item android:color="#1888E7" android:offset="0.0" />
+                <item android:color="#82C2F8" android:offset="0.8" />
+                <item android:color="#FFFFFF" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+</vector>

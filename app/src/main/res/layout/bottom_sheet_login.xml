@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:paddingTop="16dp"
+    android:paddingBottom="36dp"
+    android:paddingHorizontal="20dp">
+
+    <!-- Top Handle Bar -->
+    <View
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:background="#CCCCCC"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Header Row: Batalkan (Kiri), Login Title (Tengah), Belum Punya Akun? (Kanan) -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp">
+
+        <TextView
+            android:id="@+id/tvCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Batalkan"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="#00529C"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:padding="4dp" />
+
+        <TextView
+            android:id="@+id/tvLoginTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_centerInParent="true" />
+
+        <!-- Tombol "Belum punya akun?" di Samping Kanan (Teks Biru Digarisbawahi) -->
+        <TextView
+            android:id="@+id/tvRegisterPrompt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Belum punya akun?"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="#00529C"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:padding="4dp" />
+    </RelativeLayout>
+
+    <!-- Form Inputs Container -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Username / Akun Input (Teks Hitam Murni) -->
+        <LinearLayout
+            android:id="@+id/layoutUsername"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/bg_rect_input"
+            android:paddingHorizontal="16dp"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_person"
+                android:contentDescription="User" />
+
+            <EditText
+                android:id="@+id/etUserId"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="Username"
+                android:inputType="text"
+                android:background="@null"
+                android:textColor="#000000"
+                android:textColorHint="#9CA3AF"
+                android:textSize="14sp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp" />
+        </LinearLayout>
+
+        <!-- Password Input (Teks Hitam Murni) -->
+        <LinearLayout
+            android:id="@+id/layoutPassword"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/bg_rect_input"
+            android:paddingHorizontal="16dp"
+            android:layout_marginBottom="20dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_lock"
+                android:contentDescription="Lock" />
+
+            <EditText
+                android:id="@+id/etMpin"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:background="@null"
+                android:textColor="#000000"
+                android:textColorHint="#9CA3AF"
+                android:textSize="14sp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp" />
+
+            <ImageView
+                android:id="@+id/ivTogglePassword"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_eye"
+                android:contentDescription="Toggle" />
+        </LinearLayout>
+
+        <!-- Login Submit Button (Warna Putih Keabuan saat Kosong, Teks Keabuan) -->
+        <Button
+            android:id="@+id/btnSubmitLogin"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Login"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#9CA3AF"
+            android:background="@drawable/bg_rect_input"
+            android:backgroundTint="#E5E7EB"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Lupa Username/Password (Ditaruh Di Bawah Tombol Login, Bold & Lebih Besar) -->
+        <TextView
+            android:id="@+id/tvForgotPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lupa Username/Password?"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="#00529C"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:padding="8dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

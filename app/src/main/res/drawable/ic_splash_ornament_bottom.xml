@@ -1,0 +1,16 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+    <!-- Curve line 1 -->
+    <path
+        android:pathData="M0,80 C50,100 100,140 140,200"
+        android:strokeWidth="1.5"
+        android:strokeColor="#30FFFFFF" />
+    <!-- Curve line 2 -->
+    <path
+        android:pathData="M0,130 C30,140 70,160 100,200"
+        android:strokeWidth="1.5"
+        android:strokeColor="#20FFFFFF" />
+</vector>

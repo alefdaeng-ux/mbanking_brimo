@@ -1,0 +1,1478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8FAFC"
+    tools:context=".DashboardActivity">
+
+    <!-- Sticky Top Action Bar (Ketinggian Terkunci 84dp, Murni Pinned di Paling Atas Layar) -->
+    <RelativeLayout
+        android:id="@+id/stickyTopBar"
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
+        android:background="#1888E7"
+        android:elevation="0dp"
+        android:paddingHorizontal="16dp"
+        android:paddingBottom="8dp"
+        android:layout_alignParentTop="true">
+
+        <!-- Logo & User Greeting -->
+        <ImageView
+            android:id="@+id/ivHeaderLogo"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/ic_brimo_logo"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="4dp"
+            android:contentDescription="Logo BRImo" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_toEndOf="@id/ivHeaderLogo"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="2dp"
+            android:layout_marginStart="8dp">
+
+            <TextView
+                android:id="@+id/tvWelcomeTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Selamat Sore,"
+                android:textSize="11sp"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tvUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Moh Nur"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <!-- Action Icons: Logout, Headset, Notification (Bundaran Biru Tua) -->
+
+        <!-- 1. Tombol Keluar (Paling Kanan) -->
+        <ImageView
+            android:id="@+id/btnLogoutHeader"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_logout"
+            android:background="@drawable/bg_dark_blue_circle"
+            android:padding="6dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="2dp"
+            android:contentDescription="Logout" />
+
+        <!-- 2. Pusat Bantuan (Di Sebelah Kiri Logout) -->
+        <ImageView
+            android:id="@+id/btnHelp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_headphone"
+            android:background="@drawable/bg_dark_blue_circle"
+            android:padding="6dp"
+            android:layout_toStartOf="@id/btnLogoutHeader"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="2dp"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="Pusat Bantuan" />
+
+        <!-- 3. Notifikasi dengan Badge 9+ (Di Sebelah Kiri Headset) -->
+        <RelativeLayout
+            android:id="@+id/btnNotification"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/bg_dark_blue_circle"
+            android:layout_toStartOf="@id/btnHelp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="2dp"
+            android:layout_marginEnd="8dp">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_notification"
+                android:layout_centerInParent="true"
+                android:contentDescription="Notifikasi" />
+
+            <!-- Badge 9+ -->
+            <TextView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:text="9+"
+                android:textSize="7sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:background="@drawable/bg_circle_button"
+                android:backgroundTint="#D32F2F"
+                android:gravity="center"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="1dp" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <!-- Scrollable Main Content Body (Di Bawah Sticky Top Bar) -->
+    <ScrollView
+        android:id="@+id/scrollViewHome"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/stickyTopBar"
+        android:layout_above="@id/layoutBottomNavContainer"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Latar Belakang Biru Gelombang Sejajar "Semua Rekeningmu" -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/bg_dashboard_header_wave" />
+
+            <!-- Kartu Putih Utama -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_dashboard_card_white"
+                android:elevation="4dp"
+                android:padding="16dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="-110dp">
+
+                <!-- Kotak Saldo Biru Tua -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_balance_card_blue"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tvBalanceTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Saldo Rekening Utama"
+                        android:textSize="13sp"
+                        android:textColor="@color/white" />
+
+                    <!-- Sensor / Tampilkan Saldo dengan Ikon Mata Putih Terang -->
+                    <LinearLayout
+                        android:id="@+id/layoutBalanceRow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_below="@id/tvBalanceTitle"
+                        android:layout_marginTop="8dp">
+
+                        <TextView
+                            android:id="@+id/tvBalance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="● ● ● ● ● ● ●"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/white" />
+
+                        <ImageView
+                            android:id="@+id/ivToggleBalance"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@drawable/ic_eye_off_white"
+                            android:layout_marginStart="12dp"
+                            android:contentDescription="Sembunyikan Saldo" />
+                    </LinearLayout>
+
+                    <!-- Pembatas Garis Putih Halus -->
+                    <View
+                        android:id="@+id/dividerBalance"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#30FFFFFF"
+                        android:layout_below="@id/layoutBalanceRow"
+                        android:layout_marginTop="12dp" />
+
+                    <TextView
+                        android:id="@+id/tvAllAccounts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Semua Rekeningmu →"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:layout_below="@id/dividerBalance"
+                        android:layout_marginTop="12dp" />
+                </RelativeLayout>
+
+                <!-- 4 Fitur Utama Atas Grid -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp">
+
+                    <!-- Transfer -->
+                    <LinearLayout
+                        android:id="@+id/btnTopTransfer"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="52dp"
+                            android:layout_height="52dp"
+                            android:src="@drawable/ic_transfer"
+                            android:background="@drawable/bg_feature_icon_box"
+                            android:padding="12dp"
+                            android:contentDescription="Transfer" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Transfer"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+
+                    <!-- BRIVA -->
+                    <LinearLayout
+                        android:id="@+id/btnTopBriva"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="52dp"
+                            android:layout_height="52dp"
+                            android:src="@drawable/ic_briva"
+                            android:background="@drawable/bg_feature_icon_box"
+                            android:padding="12dp"
+                            android:contentDescription="BRIVA" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="BRIVA"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+
+                    <!-- Emas -->
+                    <LinearLayout
+                        android:id="@+id/btnTopGold"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="52dp"
+                            android:layout_height="52dp"
+                            android:src="@drawable/ic_gold"
+                            android:background="@drawable/bg_feature_icon_box"
+                            android:padding="12dp"
+                            android:contentDescription="Emas" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Emas"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+
+                    <!-- Pulsa / Data -->
+                    <LinearLayout
+                        android:id="@+id/btnTopPulsa"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="52dp"
+                            android:layout_height="52dp"
+                            android:src="@drawable/ic_pulsa"
+                            android:background="@drawable/bg_feature_icon_box"
+                            android:padding="12dp"
+                            android:contentDescription="Pulsa" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pulsa/Data"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Banner Carousel Promo (Dapat Di-scroll Kanan/Kiri) -->
+            <HorizontalScrollView
+                android:id="@+id/hsvBanner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:paddingHorizontal="16dp"
+                android:layout_marginTop="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Banner 1: Qita by BRI -->
+                    <RelativeLayout
+                        android:id="@+id/btnQitaBanner"
+                        android:layout_width="280dp"
+                        android:layout_height="80dp"
+                        android:background="@drawable/bg_qita_banner"
+                        android:paddingHorizontal="14dp"
+                        android:paddingVertical="10dp"
+                        android:layout_marginEnd="12dp"
+                        android:clipToOutline="true">
+
+                        <!-- Background Wave/Lines Overlay -->
+
+
+                        <!-- Left Text Section -->
+                        <LinearLayout
+                            android:id="@+id/layoutQitaText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_toStartOf="@id/ivQitaLogo">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Qita Hadir Lebih Cepat Buatmu!"
+                                android:textSize="13sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/white" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Klik disini untuk mengakses Qita."
+                                android:textSize="10sp"
+                                android:textColor="#E0F2FE"
+                                android:layout_marginTop="2dp" />
+                        </LinearLayout>
+
+                        <!-- Right Logo Section: Qita_by_BRI (White Vector Icon) -->
+                        <ImageView
+                            android:id="@+id/ivQitaLogo"
+                            android:layout_width="68dp"
+                            android:layout_height="44dp"
+                            android:src="@drawable/ic_qita_by_bri"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="4dp"
+                            android:contentDescription="Logo Qita by BRI" />
+
+                    </RelativeLayout>
+
+                    <!-- Banner 2: Investasi Emas -->
+                    <RelativeLayout
+                        android:id="@+id/btnGoldBanner"
+                        android:layout_width="280dp"
+                        android:layout_height="80dp"
+                        android:background="@drawable/bg_qita_banner"
+                        android:paddingHorizontal="14dp"
+                        android:paddingVertical="10dp"
+                        android:layout_marginEnd="12dp"
+                        android:clipToOutline="true">
+
+                        <!-- Background Wave/Lines Overlay -->
+
+
+                        <!-- Left Text Section -->
+                        <LinearLayout
+                            android:id="@+id/layoutGoldText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_toStartOf="@id/ivGoldLogo">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Harga Emas Hari Ini Naik!"
+                                android:textSize="13sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/white" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Mulai kini, investasi emas lewat BRImo."
+                                android:textSize="10sp"
+                                android:textColor="#E0F2FE"
+                                android:layout_marginTop="2dp" />
+                        </LinearLayout>
+
+                        <!-- Right Logo Section: Emas PNG Image (pngwing_com) -->
+                        <ImageView
+                            android:id="@+id/ivGoldLogo"
+                            android:layout_width="64dp"
+                            android:layout_height="56dp"
+                            android:src="@drawable/pngwing_com"
+                            android:scaleType="fitCenter"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="4dp"
+                            android:contentDescription="Gambar Emas" />
+
+                    </RelativeLayout>
+
+                    <!-- Banner 3: Promo BRIZZI 2025 -->
+                    <RelativeLayout
+                        android:id="@+id/btnBrizziBanner"
+                        android:layout_width="280dp"
+                        android:layout_height="80dp"
+                        android:background="@drawable/bg_qita_banner"
+                        android:paddingHorizontal="14dp"
+                        android:paddingVertical="10dp"
+                        android:layout_marginEnd="12dp"
+                        android:clipToOutline="true">
+
+
+                        <!-- Left Text Section -->
+                        <LinearLayout
+                            android:id="@+id/layoutBrizziText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_toStartOf="@id/ivBrizziLogo">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Promo Cashback 50% BRIZZI"
+                                android:textSize="13sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/white" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Top Up BRIZZI sekarang &amp; dapatkan bonusnya!"
+                                android:textSize="10sp"
+                                android:textColor="#E0F2FE"
+                                android:layout_marginTop="2dp" />
+                        </LinearLayout>
+
+                        <!-- Right Logo Section: BRIZZI 2025 (White Vector Icon) -->
+                        <ImageView
+                            android:id="@+id/ivBrizziLogo"
+                            android:layout_width="68dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_brizzi_2025"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="4dp"
+                            android:contentDescription="Logo BRIZZI 2025" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <!-- Dots Indicator Dinamis -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp">
+
+                <View
+                    android:id="@+id/dot1"
+                    android:layout_width="16dp"
+                    android:layout_height="6dp"
+                    android:background="@drawable/bg_pill_button"
+                    android:backgroundTint="#00529C"
+                    android:layout_marginHorizontal="3dp" />
+
+                <View
+                    android:id="@+id/dot2"
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:background="@drawable/bg_pill_button"
+                    android:backgroundTint="#CBD5E1"
+                    android:layout_marginHorizontal="3dp" />
+
+                <View
+                    android:id="@+id/dot3"
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:background="@drawable/bg_pill_button"
+                    android:backgroundTint="#CBD5E1"
+                    android:layout_marginHorizontal="3dp" />
+            </LinearLayout>
+
+            <!-- Fitur Pencarian & Atur Fitur -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="20dp">
+
+                <!-- Search Input Bar -->
+                <LinearLayout
+                    android:id="@+id/layoutSearchBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:background="@drawable/bg_search_bar"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="12dp"
+                    android:layout_toStartOf="@id/btnManageFeatures"
+                    android:layout_marginEnd="12dp">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@drawable/ic_search"
+                        android:contentDescription="Cari" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cari fitur"
+                        android:textSize="13sp"
+                        android:textColor="@color/text_hint"
+                        android:layout_marginStart="8dp" />
+                </LinearLayout>
+
+                <!-- Button Atur Fitur -->
+                <LinearLayout
+                    android:id="@+id/btnManageFeatures"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:background="@drawable/bg_light_blue_card"
+                    android:gravity="center"
+                    android:paddingHorizontal="14dp"
+                    android:layout_alignParentEnd="true">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_edit"
+                        android:contentDescription="Edit" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Atur Fitur"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="#00529C"
+                        android:layout_marginStart="6dp" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <!-- Fitur Tambahan Grid Container (Expandable 4x4) -->
+            <LinearLayout
+                android:id="@+id/layoutFeatureContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="20dp">
+
+                <!-- Baris 1: Top Up, Tagihan, Setor & Tarik Tunai, Lifestyle -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="16dp">
+
+                    <!-- 1. Top Up -->
+                    <LinearLayout
+                        android:id="@+id/btnTopUp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="52dp"
+                            android:layout_height="52dp"
+                            android:src="@drawable/ic_topup"
+                            android:background="@drawable/bg_feature_icon_box"
+                            android:padding="12dp"
+                            android:contentDescription="Top Up" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Top Up"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+
+                    <!-- 2. Tagihan -->
+                    <LinearLayout
+                        android:id="@+id/btnTagihan"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="52dp"
+                            android:layout_height="52dp"
+                            android:src="@drawable/ic_payment"
+                            android:background="@drawable/bg_feature_icon_box"
+                            android:padding="12dp"
+                            android:contentDescription="Tagihan" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tagihan"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+
+                    <!-- 3. Setor & Tarik Tunai -->
+                    <LinearLayout
+                        android:id="@+id/btnCashDeposit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="52dp"
+                            android:layout_height="52dp"
+                            android:src="@drawable/ic_cash_deposit"
+                            android:background="@drawable/bg_feature_icon_box"
+                            android:padding="12dp"
+                            android:contentDescription="Setor Tunai" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Setor &amp;\nTarik Tunai"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary"
+                            android:gravity="center"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+
+                    <!-- 4. Lifestyle -->
+                    <LinearLayout
+                        android:id="@+id/btnLifestyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="52dp"
+                            android:layout_height="52dp"
+                            android:src="@drawable/ic_shopping_cart"
+                            android:background="@drawable/bg_feature_icon_box"
+                            android:padding="12dp"
+                            android:contentDescription="Lifestyle" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Lifestyle"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Baris 2: Virtual Debit, Catatan Keuangan, Investasi, Donasi -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="16dp">
+
+                    <!-- 5. Virtual Debit -->
+                    <LinearLayout
+                        android:id="@+id/btnVirtualDebit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="52dp"
+                            android:layout_height="52dp"
+                            android:src="@drawable/ic_virtual_debit"
+                            android:background="@drawable/bg_feature_icon_box"
+                            android:padding="12dp"
+                            android:contentDescription="Virtual Debit" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Virtual Debit"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+
+                    <!-- 6. Catatan Keuangan -->
+                    <LinearLayout
+                        android:id="@+id/btnInvestment"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="52dp"
+                            android:layout_height="52dp"
+                            android:src="@drawable/ic_finance_note"
+                            android:background="@drawable/bg_feature_icon_box"
+                            android:padding="12dp"
+                            android:contentDescription="Catatan Keuangan" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Catatan Keuangan"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary"
+                            android:gravity="center"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+
+                    <!-- 7. Investasi -->
+                    <LinearLayout
+                        android:id="@+id/btnInvestasi"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="52dp"
+                            android:layout_height="52dp"
+                            android:src="@drawable/ic_investment"
+                            android:background="@drawable/bg_feature_icon_box"
+                            android:padding="12dp"
+                            android:contentDescription="Investasi" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Investasi"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+
+                    <!-- 8. Donasi -->
+                    <LinearLayout
+                        android:id="@+id/btnDonasi"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="52dp"
+                            android:layout_height="52dp"
+                            android:src="@drawable/ic_donation"
+                            android:background="@drawable/bg_feature_icon_box"
+                            android:padding="12dp"
+                            android:contentDescription="Donasi" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Donasi"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Container Baris Tambahan (Disembunyikan secara Default / Collapsed) -->
+                <LinearLayout
+                    android:id="@+id/layoutExtraRows"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <!-- Baris 3: Konversi Valas, Kartu Kredit, Asuransi, Pinjaman -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="16dp">
+
+                        <!-- 9. Konversi Valas -->
+                        <LinearLayout
+                            android:id="@+id/btnForex"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="52dp"
+                                android:layout_height="52dp"
+                                android:src="@drawable/ic_forex"
+                                android:background="@drawable/bg_feature_icon_box"
+                                android:padding="12dp"
+                                android:contentDescription="Konversi Valas" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Konversi Valas"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/text_primary"
+                                android:gravity="center"
+                                android:layout_marginTop="6dp" />
+                        </LinearLayout>
+
+                        <!-- 10. Kartu Kredit -->
+                        <LinearLayout
+                            android:id="@+id/btnCreditCard"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="52dp"
+                                android:layout_height="52dp"
+                                android:src="@drawable/ic_payment"
+                                android:background="@drawable/bg_feature_icon_box"
+                                android:padding="12dp"
+                                android:contentDescription="Kartu Kredit" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Kartu Kredit"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/text_primary"
+                                android:gravity="center"
+                                android:layout_marginTop="6dp" />
+                        </LinearLayout>
+
+                        <!-- 11. Asuransi -->
+                        <LinearLayout
+                            android:id="@+id/btnInsurance"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="52dp"
+                                android:layout_height="52dp"
+                                android:src="@drawable/ic_insurance"
+                                android:background="@drawable/bg_feature_icon_box"
+                                android:padding="12dp"
+                                android:contentDescription="Asuransi" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Asuransi"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/text_primary"
+                                android:layout_marginTop="6dp" />
+                        </LinearLayout>
+
+                        <!-- 12. Pinjaman -->
+                        <LinearLayout
+                            android:id="@+id/btnLoan"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="52dp"
+                                android:layout_height="52dp"
+                                android:src="@drawable/ic_loan"
+                                android:background="@drawable/bg_feature_icon_box"
+                                android:padding="12dp"
+                                android:contentDescription="Pinjaman" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Pinjaman"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/text_primary"
+                                android:layout_marginTop="6dp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- Baris 4: Produk BRI & BRIZZI & Spacer -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="16dp">
+
+                        <!-- 13. Produk BRI -->
+                        <LinearLayout
+                            android:id="@+id/btnBriProducts"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="52dp"
+                                android:layout_height="52dp"
+                                android:src="@drawable/ic_bri_products"
+                                android:background="@drawable/bg_feature_icon_box"
+                                android:padding="12dp"
+                                android:contentDescription="Produk BRI" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Produk BRI"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/text_primary"
+                                android:gravity="center"
+                                android:layout_marginTop="6dp" />
+                        </LinearLayout>
+
+                        <!-- 14. BRIZZI -->
+                        <LinearLayout
+                            android:id="@+id/btnBrizzi"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="52dp"
+                                android:layout_height="52dp"
+                                android:src="@drawable/ic_brizzi"
+                                android:background="@drawable/bg_feature_icon_box"
+                                android:padding="12dp"
+                                android:contentDescription="BRIZZI" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="BRIZZI"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/text_primary"
+                                android:layout_marginTop="6dp" />
+                        </LinearLayout>
+
+                        <!-- Spacer 1 -->
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1" />
+
+                        <!-- Spacer 2 -->
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Pembatas Garis Halus -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E2E8F0"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Tombol Toggle "Lainnya ∨" / "Tutup ∧" -->
+                <LinearLayout
+                    android:id="@+id/btnToggleLainnya"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="16dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <TextView
+                        android:id="@+id/tvLainnyaText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lainnya"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textColor="#00529C" />
+
+                    <ImageView
+                        android:id="@+id/ivLainnyaIcon"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@drawable/ic_chevron_down"
+                        android:layout_marginStart="4dp"
+                        android:contentDescription="Toggle Lainnya" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- ========================================== -->
+            <!-- SEKSI A: KARTU DONASI "BERKESEMPATAN UMRAH GRATIS" -->
+            <!-- ========================================== -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_light_blue_card"
+                android:paddingBottom="20dp">
+
+                <!-- Badge Kiri Atas (Menempel di sudut) -->
+                <TextView
+                    android:id="@+id/tvUmrahBadge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Berkesempatan umrah gratis"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:background="@drawable/bg_blue_badge"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="4dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true" />
+
+                <!-- Teks & Deskripsi Utama -->
+                <LinearLayout
+                    android:id="@+id/layoutDonasiText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_below="@id/tvUmrahBadge"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@id/ivHeartIcon"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Yuk, berbagi setiap hari!"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#333333" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Aktifkan donasi rutin agar kamu bisa terus berbagi kebaikan tanpa terlewat."
+                        android:textSize="12sp"
+                        android:textColor="#666666"
+                        android:lineSpacingExtra="2dp"
+                        android:layout_marginTop="6dp" />
+                </LinearLayout>
+
+                <!-- Gambar Donasi Sejak Kustom -->
+                <ImageView
+                    android:id="@+id/ivHeartIcon"
+                    android:layout_width="68dp"
+                    android:layout_height="68dp"
+                    android:src="@drawable/sejak"
+                    android:scaleType="fitCenter"
+                    android:layout_below="@id/tvUmrahBadge"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginTop="12dp"
+                    android:contentDescription="Gambar Donasi Sejak" />
+
+                <!-- Tombol Jadwalkan Sekarang -->
+                <Button
+                    android:id="@+id/btnScheduleDonation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="Jadwalkan Sekarang"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:background="@drawable/bg_pill_button"
+                    android:backgroundTint="#00529C"
+                    android:paddingHorizontal="16dp"
+                    android:layout_below="@id/layoutDonasiText"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp" />
+
+            </RelativeLayout>
+
+            <!-- ========================================== -->
+            <!-- SEKSI B: SPESIAL UNTUKMO (CAROUSEL PROMO)  -->
+            <!-- ========================================== -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:paddingBottom="120dp"> <!-- Extra padding for Nav Bar -->
+
+                <!-- Header Title -->
+                <TextView
+                    android:id="@+id/tvSpesialTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Spesial Untukmo"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#333333"
+                    android:layout_marginStart="16dp" />
+
+                <!-- Deskripsi Subtitle -->
+                <TextView
+                    android:id="@+id/tvSpesialDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cobain beragam cara baru untuk memaksimalkan aktivitas perbankan kamu"
+                    android:textSize="12sp"
+                    android:textColor="#666666"
+                    android:layout_below="@id/tvSpesialTitle"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp" />
+
+                <!-- Carousel 3 Gambar Promo (Horizontal Scroll) -->
+                <HorizontalScrollView
+                    android:id="@+id/hsvPromoCarousel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvSpesialDesc"
+                    android:layout_marginTop="16dp"
+                    android:paddingHorizontal="16dp"
+                    android:scrollbars="none"
+                    android:clipToPadding="false">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- Promo 1: Gambar Asli -->
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="280dp"
+                            android:layout_height="140dp"
+                            android:layout_marginEnd="12dp"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="0dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/sessajakie"
+                                android:scaleType="centerCrop"
+                                android:contentDescription="Promo Danantara" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- Promo 2: Gambar Asli -->
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="280dp"
+                            android:layout_height="140dp"
+                            android:layout_marginEnd="12dp"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="0dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/mantappu"
+                                android:scaleType="centerCrop"
+                                android:contentDescription="Promo Mantappu" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- Promo 3: Gambar Asli -->
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="280dp"
+                            android:layout_height="140dp"
+                            android:layout_marginEnd="16dp"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="0dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/wayahe"
+                                android:scaleType="centerCrop"
+                                android:contentDescription="Promo Wayahe" />
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+                <!-- Tombol Lihat Semua di Kanan Bawah dari Carousel -->
+                <TextView
+                    android:id="@+id/tvSeeAllPromos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lihat Semua →"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/bank_primary"
+                    android:layout_below="@id/hsvPromoCarousel"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginTop="16dp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- Fragment Container untuk Mutasi, Aktivitas, Akun -->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/layoutBottomNavContainer"
+        android:visibility="gone" />
+
+    <!-- Bottom Navigation Bar (Solid Putih sampai dasar layar) -->
+    <RelativeLayout
+        android:id="@+id/layoutBottomNavContainer"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:background="@color/white"
+        android:elevation="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- Nav 1: Home -->
+            <LinearLayout
+                android:id="@+id/navHome"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/ivNavHome"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_person"
+                    app:tint="#00529C"
+                    android:contentDescription="Home" />
+
+                <TextView
+                    android:id="@+id/tvNavHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Home"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:textColor="#00529C"
+                    android:layout_marginTop="2dp" />
+            </LinearLayout>
+
+            <!-- Nav 2: Mutasi -->
+            <LinearLayout
+                android:id="@+id/navMutasi"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/ivNavMutasi"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_history"
+                    app:tint="#757575"
+                    android:contentDescription="Mutasi" />
+
+                <TextView
+                    android:id="@+id/tvNavMutasi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mutasi"
+                    android:textSize="11sp"
+                    android:textColor="#757575"
+                    android:layout_marginTop="2dp" />
+            </LinearLayout>
+
+            <!-- Spacer untuk Tombol QRIS Melayang -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.2" />
+
+            <!-- Nav 3: Aktivitas -->
+            <LinearLayout
+                android:id="@+id/navActivity"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/ivNavActivity"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_finance_note"
+                    app:tint="#757575"
+                    android:contentDescription="Aktivitas" />
+
+                <TextView
+                    android:id="@+id/tvNavActivity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Aktivitas"
+                    android:textSize="11sp"
+                    android:textColor="#757575"
+                    android:layout_marginTop="2dp" />
+            </LinearLayout>
+
+            <!-- Nav 4: Akun / Logout -->
+            <LinearLayout
+                android:id="@+id/navAccount"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/ivNavAccount"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_person"
+                    app:tint="#757575"
+                    android:contentDescription="Akun" />
+
+                <TextView
+                    android:id="@+id/tvNavAccount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Akun"
+                    android:textSize="11sp"
+                    android:textColor="#757575"
+                    android:layout_marginTop="2dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <!-- Tombol QRIS Melayang (Dengan cincin biru muda, menonjol 50% di atas navbar) -->
+    <LinearLayout
+        android:id="@+id/btnQrisCenter"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/bg_qris_ring"
+        android:elevation="14dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="38dp">
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/ic_qris_framed"
+            android:contentDescription="QRIS" />
+
+    </LinearLayout>
+
+</RelativeLayout>

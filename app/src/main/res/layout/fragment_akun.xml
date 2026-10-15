@@ -1,0 +1,1150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F8FAFC">
+
+    <!-- Scrollable Main Content (Termasuk Header Wave & Profile Card) -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="120dp">
+
+            <!-- Header Wave & Profile Card Overlap Container -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- Header Wave Background -->
+                <View
+                    android:id="@+id/headerAkunBg"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:background="@drawable/bg_dashboard_header_wave" />
+
+                <!-- Title "Akun" -->
+                <TextView
+                    android:id="@+id/tvAkunTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Akun"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="40dp" />
+
+                <!-- Profile User Card (Kotak Putih Terangkat 100% Tampak Jelas di Atas Gelombang) -->
+                <RelativeLayout
+                    android:id="@+id/cardUserProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_dashboard_card_white"
+                    android:elevation="6dp"
+                    android:padding="16dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_below="@id/tvAkunTitle"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <!-- Avatar Circle Initial -->
+                    <RelativeLayout
+                        android:id="@+id/layoutAvatarCircle"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_circle_button"
+                        android:backgroundTint="#E0F2FE"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true">
+
+                        <TextView
+                            android:id="@+id/tvAvatarInitials"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="AP"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="#00529C"
+                            android:layout_centerInParent="true" />
+                    </RelativeLayout>
+
+                    <!-- User Name & BRIpoin -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_toEndOf="@id/layoutAvatarCircle"
+                        android:layout_toStartOf="@id/ivProfileChevron"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="14dp">
+
+                        <TextView
+                            android:id="@+id/tvAccountName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ARIL PRATAMA"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="#222222" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="4dp">
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/ic_briva"
+                                android:contentDescription="BRIpoin" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="300"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                android:textColor="#00529C"
+                                android:layout_marginStart="6dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Right Chevron -->
+                    <ImageView
+                        android:id="@+id/ivProfileChevron"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_chevron_right"
+                        app:tint="#888888"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Detail Profil" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <!-- ========================================== -->
+            <!-- SEKSI 1: INFORMASI PRIBADI                 -->
+            <!-- ========================================== -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Informasi Pribadi"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_dashboard_card_white"
+                android:elevation="2dp"
+                android:layout_marginHorizontal="16dp">
+
+                <!-- Data Diri & Pekerjaan -->
+                <RelativeLayout
+                    android:id="@+id/btnDataDiri"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:paddingHorizontal="16dp"
+                    android:gravity="center_vertical"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/iconDataDiri"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_payment"
+                        app:tint="#666666"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Data Diri" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Data Diri &amp; Pekerjaan"
+                        android:textSize="14sp"
+                        android:textColor="#333333"
+                        android:layout_toEndOf="@id/iconDataDiri"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="16dp" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_chevron_right"
+                        app:tint="#888888"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Lanjut" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <!-- ========================================== -->
+            <!-- SEKSI 2: PENGATURAN                        -->
+            <!-- ========================================== -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pengaturan"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_dashboard_card_white"
+                android:elevation="2dp"
+                android:layout_marginHorizontal="16dp">
+
+                <!-- 1. Fast Menu -->
+                <RelativeLayout
+                    android:id="@+id/btnFastMenuSetting"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:paddingHorizontal="16dp"
+                    android:gravity="center_vertical"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/iconFastMenu"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_qris"
+                        app:tint="#666666"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Fast Menu" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fast Menu"
+                        android:textSize="14sp"
+                        android:textColor="#333333"
+                        android:layout_toEndOf="@id/iconFastMenu"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="16dp" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_chevron_right"
+                        app:tint="#888888"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Lanjut" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E2E8F0"
+                    android:layout_marginHorizontal="16dp" />
+
+                <!-- 2. Update Rekening -->
+                <RelativeLayout
+                    android:id="@+id/btnUpdateRekening"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:paddingHorizontal="16dp"
+                    android:gravity="center_vertical"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/iconUpdateRekening"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_virtual_debit"
+                        app:tint="#666666"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Update Rekening" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Update Rekening"
+                        android:textSize="14sp"
+                        android:textColor="#333333"
+                        android:layout_toEndOf="@id/iconUpdateRekening"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="16dp" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_chevron_right"
+                        app:tint="#888888"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Lanjut" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E2E8F0"
+                    android:layout_marginHorizontal="16dp" />
+
+                <!-- 3. Pengelolaan Kartu -->
+                <RelativeLayout
+                    android:id="@+id/btnCardManagement"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:paddingHorizontal="16dp"
+                    android:gravity="center_vertical"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/iconCardMgmt"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_payment"
+                        app:tint="#666666"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Pengelolaan Kartu" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pengelolaan Kartu"
+                        android:textSize="14sp"
+                        android:textColor="#333333"
+                        android:layout_toEndOf="@id/iconCardMgmt"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="16dp" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_chevron_right"
+                        app:tint="#888888"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Lanjut" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E2E8F0"
+                    android:layout_marginHorizontal="16dp" />
+
+                <!-- 4. Sumber Dana QRIS -->
+                <RelativeLayout
+                    android:id="@+id/btnQrisFund"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:paddingHorizontal="16dp"
+                    android:gravity="center_vertical"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/iconQrisFund"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_qris"
+                        app:tint="#666666"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Sumber Dana QRIS" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sumber Dana QRIS"
+                        android:textSize="14sp"
+                        android:textColor="#333333"
+                        android:layout_toEndOf="@id/iconQrisFund"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="16dp" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_chevron_right"
+                        app:tint="#888888"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Lanjut" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E2E8F0"
+                    android:layout_marginHorizontal="16dp" />
+
+                <!-- 5. Bahasa -->
+                <RelativeLayout
+                    android:id="@+id/btnLanguage"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:paddingHorizontal="16dp"
+                    android:gravity="center_vertical"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/iconLanguage"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_flag_id"
+                        app:tint="#666666"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Bahasa" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bahasa"
+                        android:textSize="14sp"
+                        android:textColor="#333333"
+                        android:layout_toEndOf="@id/iconLanguage"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="16dp" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_chevron_right"
+                        app:tint="#888888"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Lanjut" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <!-- ========================================== -->
+            <!-- SEKSI 3: KEAMANAN                          -->
+            <!-- ========================================== -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Keamanan"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_dashboard_card_white"
+                android:elevation="2dp"
+                android:layout_marginHorizontal="16dp">
+
+                <!-- 1. Ubah Pin -->
+                <RelativeLayout
+                    android:id="@+id/btnChangePin"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:paddingHorizontal="16dp"
+                    android:gravity="center_vertical"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/iconChangePin"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_lock"
+                        app:tint="#666666"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Ubah Pin" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ubah Pin"
+                        android:textSize="14sp"
+                        android:textColor="#333333"
+                        android:layout_toEndOf="@id/iconChangePin"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="16dp" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_chevron_right"
+                        app:tint="#888888"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Lanjut" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E2E8F0"
+                    android:layout_marginHorizontal="16dp" />
+
+                <!-- 2. Ubah Password -->
+                <RelativeLayout
+                    android:id="@+id/btnChangePassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:paddingHorizontal="16dp"
+                    android:gravity="center_vertical"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/iconChangePassword"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_lock"
+                        app:tint="#666666"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Ubah Password" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ubah Password"
+                        android:textSize="14sp"
+                        android:textColor="#333333"
+                        android:layout_toEndOf="@id/iconChangePassword"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="16dp" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_chevron_right"
+                        app:tint="#888888"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Lanjut" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E2E8F0"
+                    android:layout_marginHorizontal="16dp" />
+
+                <!-- 3. Login Fingerprint Toggle -->
+                <RelativeLayout
+                    android:id="@+id/btnToggleFingerprint"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:paddingHorizontal="16dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/iconFingerprintSec"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_fingerprint"
+                        app:tint="#666666"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Fingerprint" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Login Fingerprint"
+                        android:textSize="14sp"
+                        android:textColor="#333333"
+                        android:layout_toEndOf="@id/iconFingerprintSec"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="16dp" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/switchFingerprint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <!-- ========================================== -->
+            <!-- SEKSI 4: CONTACT BRI                       -->
+            <!-- ========================================== -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Contact BRI"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_dashboard_card_white"
+                android:elevation="2dp"
+                android:layout_marginHorizontal="16dp">
+
+                <!-- 1. Pusat Bantuan -->
+                <RelativeLayout
+                    android:id="@+id/btnHelpCenter"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:paddingHorizontal="16dp"
+                    android:gravity="center_vertical"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/iconHelpCenter"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_headphone"
+                        app:tint="#666666"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Pusat Bantuan" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pusat Bantuan"
+                        android:textSize="14sp"
+                        android:textColor="#333333"
+                        android:layout_toEndOf="@id/iconHelpCenter"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="16dp" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_chevron_right"
+                        app:tint="#888888"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Lanjut" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E2E8F0"
+                    android:layout_marginHorizontal="16dp" />
+
+                <!-- 2. Chat Banking -->
+                <RelativeLayout
+                    android:id="@+id/btnChatBanking"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:paddingHorizontal="16dp"
+                    android:gravity="center_vertical"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/iconChatBanking"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_finance_note"
+                        app:tint="#666666"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Chat Banking" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chat Banking"
+                        android:textSize="14sp"
+                        android:textColor="#333333"
+                        android:layout_toEndOf="@id/iconChatBanking"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="16dp" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_chevron_right"
+                        app:tint="#888888"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Lanjut" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E2E8F0"
+                    android:layout_marginHorizontal="16dp" />
+
+                <!-- 3. Layanan Bebas Pulsa -->
+                <RelativeLayout
+                    android:id="@+id/btnTollFree"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:paddingHorizontal="16dp"
+                    android:gravity="center_vertical"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/iconTollFree"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_call"
+                        app:tint="#666666"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Layanan Bebas Pulsa" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Layanan Bebas Pulsa"
+                        android:textSize="14sp"
+                        android:textColor="#333333"
+                        android:layout_toEndOf="@id/iconTollFree"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="16dp" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_chevron_right"
+                        app:tint="#888888"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Lanjut" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E2E8F0"
+                    android:layout_marginHorizontal="16dp" />
+
+                <!-- 4. Kontak Kami -->
+                <RelativeLayout
+                    android:id="@+id/btnContactUs"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:paddingHorizontal="16dp"
+                    android:gravity="center_vertical"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/iconContactUs"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_call"
+                        app:tint="#666666"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Kontak Kami" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kontak Kami"
+                        android:textSize="14sp"
+                        android:textColor="#333333"
+                        android:layout_toEndOf="@id/iconContactUs"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="16dp" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_chevron_right"
+                        app:tint="#888888"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Lanjut" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <!-- ========================================== -->
+            <!-- SEKSI 5: INFORMASI                         -->
+            <!-- ========================================== -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Informasi"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_dashboard_card_white"
+                android:elevation="2dp"
+                android:layout_marginHorizontal="16dp">
+
+                <!-- 1. Jenis & Limit Transaksi -->
+                <RelativeLayout
+                    android:id="@+id/btnTxLimit"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:paddingHorizontal="16dp"
+                    android:gravity="center_vertical"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/iconTxLimit"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_payment"
+                        app:tint="#666666"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Jenis &amp; Limit Transaksi" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Jenis &amp; Limit Transaksi"
+                        android:textSize="14sp"
+                        android:textColor="#333333"
+                        android:layout_toEndOf="@id/iconTxLimit"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="16dp" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_chevron_right"
+                        app:tint="#888888"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Lanjut" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E2E8F0"
+                    android:layout_marginHorizontal="16dp" />
+
+                <!-- 2. Info Kurs -->
+                <RelativeLayout
+                    android:id="@+id/btnInfoKurs"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:paddingHorizontal="16dp"
+                    android:gravity="center_vertical"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/iconInfoKurs"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_finance_note"
+                        app:tint="#666666"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Info Kurs" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Info Kurs"
+                        android:textSize="14sp"
+                        android:textColor="#333333"
+                        android:layout_toEndOf="@id/iconInfoKurs"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="16dp" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_chevron_right"
+                        app:tint="#888888"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Lanjut" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E2E8F0"
+                    android:layout_marginHorizontal="16dp" />
+
+                <!-- 3. Info Saham -->
+                <RelativeLayout
+                    android:id="@+id/btnInfoSaham"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:paddingHorizontal="16dp"
+                    android:gravity="center_vertical"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/iconInfoSaham"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_investment"
+                        app:tint="#666666"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Info Saham" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Info Saham"
+                        android:textSize="14sp"
+                        android:textColor="#333333"
+                        android:layout_toEndOf="@id/iconInfoSaham"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="16dp" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_chevron_right"
+                        app:tint="#888888"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Lanjut" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E2E8F0"
+                    android:layout_marginHorizontal="16dp" />
+
+                <!-- 4. Lokasi ATM -->
+                <RelativeLayout
+                    android:id="@+id/btnAtmLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:paddingHorizontal="16dp"
+                    android:gravity="center_vertical"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/iconAtmLocation"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_cash_deposit"
+                        app:tint="#666666"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Lokasi ATM" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lokasi ATM"
+                        android:textSize="14sp"
+                        android:textColor="#333333"
+                        android:layout_toEndOf="@id/iconAtmLocation"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="16dp" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_chevron_right"
+                        app:tint="#888888"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Lanjut" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E2E8F0"
+                    android:layout_marginHorizontal="16dp" />
+
+                <!-- 5. Lokasi Kantor -->
+                <RelativeLayout
+                    android:id="@+id/btnOfficeLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:paddingHorizontal="16dp"
+                    android:gravity="center_vertical"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/iconOfficeLocation"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_bri_products"
+                        app:tint="#666666"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Lokasi Kantor" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lokasi Kantor"
+                        android:textSize="14sp"
+                        android:textColor="#333333"
+                        android:layout_toEndOf="@id/iconOfficeLocation"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="16dp" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_chevron_right"
+                        app:tint="#888888"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Lanjut" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E2E8F0"
+                    android:layout_marginHorizontal="16dp" />
+
+                <!-- 6. Tentang BRImo -->
+                <RelativeLayout
+                    android:id="@+id/btnAboutBrimo"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:paddingHorizontal="16dp"
+                    android:gravity="center_vertical"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/iconAboutBrimo"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_info"
+                        app:tint="#666666"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Tentang BRImo" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tentang BRImo"
+                        android:textSize="14sp"
+                        android:textColor="#333333"
+                        android:layout_toEndOf="@id/iconAboutBrimo"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="16dp" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_chevron_right"
+                        app:tint="#888888"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Lanjut" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <!-- ========================================== -->
+            <!-- KOTAK PUTIH LOGOUT                         -->
+            <!-- ========================================== -->
+            <LinearLayout
+                android:id="@+id/btnLogoutAccount"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/bg_dashboard_card_white"
+                android:elevation="2dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="28dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="16dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_logout"
+                    app:tint="#D32F2F"
+                    android:contentDescription="Logout" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Logout"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="#D32F2F"
+                    android:layout_marginStart="12dp" />
+            </LinearLayout>
+
+            <!-- VERSI APLIKASI FOOTER -->
+            <TextView
+                android:id="@+id/tvAppVersionAkun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Versi Aplikasi 2.100.0"
+                android:textSize="13sp"
+                android:textColor="#888888"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:layout_marginTop="24dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,32 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="160dp"
+    android:height="100dp"
+    android:viewportWidth="160"
+    android:viewportHeight="100">
+    <!-- Blue KTP Card Frame -->
+    <path
+        android:fillColor="#80D8FF"
+        android:pathData="M10,0h140c5.5,0 10,4.5 10,10v80c0,5.5 -4.5,10 -10,10H10c-5.5,0 -10,-4.5 -10,-10V10c0,-5.5 4.5,-10 10,-10z"/>
+    <!-- Red Outline Frame to mimic the guide frame -->
+    <path
+        android:strokeColor="#FF1744"
+        android:strokeWidth="3"
+        android:pathData="M15,10h130v80H15z"/>
+    <!-- Lines -->
+    <path
+        android:fillColor="#0D47A1"
+        android:pathData="M25,20h70v5H25zM25,32h80v4H25zM25,42h60v4H25zM25,52h70v4H25z"/>
+    <!-- Photo Box -->
+    <path
+        android:fillColor="#0288D1"
+        android:pathData="M110,25h30v45h-30z"/>
+    <!-- Red Cross Badge -->
+    <path
+        android:fillColor="#FF1744"
+        android:pathData="M80,85m-10,0a10,10 0,1,1 20,0a10,10 0,1,1 -20,0"/>
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M76,79l8,12M84,79l-8,12"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2"/>
+</vector>

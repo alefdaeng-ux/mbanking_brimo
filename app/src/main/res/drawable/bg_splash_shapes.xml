@@ -1,0 +1,22 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="360dp"
+    android:height="640dp"
+    android:viewportWidth="360"
+    android:viewportHeight="640">
+
+    <!-- Bright Medium-Blue Splash Background (Biru yang Agak Muda) -->
+    <path
+        android:fillColor="#1888E7"
+        android:pathData="M0,0 H360 V640 H0 Z" />
+
+    <!-- Compact Soft Light-Blue Shape Top Right (Biru yang Lebih Muda Lagi) -->
+    <path
+        android:fillColor="#35E0F2FE"
+        android:pathData="M200,0 C240,60 290,95 360,110 V0 Z" />
+
+    <!-- Compact Soft Light-Blue Shape Bottom Left (Biru yang Lebih Muda Lagi) -->
+    <path
+        android:fillColor="#30E0F2FE"
+        android:pathData="M0,520 C70,540 120,575 150,640 H0 Z" />
+
+</vector>

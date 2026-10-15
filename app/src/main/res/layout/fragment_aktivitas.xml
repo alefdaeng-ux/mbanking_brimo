@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F8FAFC">
+
+    <!-- Top Light Blue Header (#1888E7) -->
+    <RelativeLayout
+        android:id="@+id/headerAktivitas"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="#1888E7"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="40dp"
+        android:paddingBottom="12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aktivitas"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="4dp" />
+
+        <ImageView
+            android:id="@+id/btnFilterAktivitas"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_tune"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="4dp"
+            android:contentDescription="Filter Aktivitas" />
+    </RelativeLayout>
+
+    <!-- Scrollable 10 Activity List -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="100dp">
+
+            <!-- Item 1: Pembelian QRIS -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="14dp"
+                android:background="@color/white">
+
+                <ImageView
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@drawable/ic_qris"
+                    android:background="@drawable/bg_feature_icon_box"
+                    android:padding="10dp"
+                    android:contentDescription="QRIS" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pembelian QRIS"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#222222" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Asfar Apps - G575189106\nRp50.000"
+                        android:textSize="13sp"
+                        android:textColor="#555555"
+                        android:layout_marginTop="2dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="24 Sep 2026 15:05"
+                        android:textSize="12sp"
+                        android:textColor="#888888"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sukses"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:background="@drawable/bg_pill_button"
+                    android:backgroundTint="#00A859"
+                    android:paddingHorizontal="14dp"
+                    android:paddingVertical="5dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E2E8F0" />
+
+            <!-- Item 2: Transfer -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="14dp"
+                android:background="@color/white">
+
+                <ImageView
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@drawable/ic_transfer"
+                    android:background="@drawable/bg_feature_icon_box"
+                    android:padding="10dp"
+                    android:contentDescription="Transfer" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Transfer"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#222222" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="BSI - 7317660299\nRp36.500"
+                        android:textSize="13sp"
+                        android:textColor="#555555"
+                        android:layout_marginTop="2dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="24 Sep 2026 12:10"
+                        android:textSize="12sp"
+                        android:textColor="#888888"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sukses"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:background="@drawable/bg_pill_button"
+                    android:backgroundTint="#00A859"
+                    android:paddingHorizontal="14dp"
+                    android:paddingVertical="5dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E2E8F0" />
+
+            <!-- Item 3: Transfer -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="14dp"
+                android:background="@color/white">
+
+                <ImageView
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@drawable/ic_transfer"
+                    android:background="@drawable/bg_feature_icon_box"
+                    android:padding="10dp"
+                    android:contentDescription="Transfer" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Transfer"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#222222" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="BANK BCA - 7686307246\nRp24.550"
+                        android:textSize="13sp"
+                        android:textColor="#555555"
+                        android:layout_marginTop="2dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="21 Sep 2026 17:13"
+                        android:textSize="12sp"
+                        android:textColor="#888888"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sukses"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:background="@drawable/bg_pill_button"
+                    android:backgroundTint="#00A859"
+                    android:paddingHorizontal="14dp"
+                    android:paddingVertical="5dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E2E8F0" />
+
+            <!-- Item 4: Pembelian QRIS -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="14dp"
+                android:background="@color/white">
+
+                <ImageView
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@drawable/ic_qris"
+                    android:background="@drawable/bg_feature_icon_box"
+                    android:padding="10dp"
+                    android:contentDescription="QRIS" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pembelian QRIS"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#222222" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Coinershop - 22007600\nRp2.000"
+                        android:textSize="13sp"
+                        android:textColor="#555555"
+                        android:layout_marginTop="2dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20 Sep 2026 17:08"
+                        android:textSize="12sp"
+                        android:textColor="#888888"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sukses"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:background="@drawable/bg_pill_button"
+                    android:backgroundTint="#00A859"
+                    android:paddingHorizontal="14dp"
+                    android:paddingVertical="5dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E2E8F0" />
+
+            <!-- Item 5: Pembelian QRIS -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="14dp"
+                android:background="@color/white">
+
+                <ImageView
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@drawable/ic_qris"
+                    android:background="@drawable/bg_feature_icon_box"
+                    android:padding="10dp"
+                    android:contentDescription="QRIS" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pembelian QRIS"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#222222" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NEW WORLD CAFE -\n000885002253041\nRp51.750"
+                        android:textSize="13sp"
+                        android:textColor="#555555"
+                        android:layout_marginTop="2dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20 Sep 2026 12:07"
+                        android:textSize="12sp"
+                        android:textColor="#888888"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sukses"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:background="@drawable/bg_pill_button"
+                    android:backgroundTint="#00A859"
+                    android:paddingHorizontal="14dp"
+                    android:paddingVertical="5dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E2E8F0" />
+
+            <!-- Item 6: Transfer -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="14dp"
+                android:background="@color/white">
+
+                <ImageView
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@drawable/ic_transfer"
+                    android:background="@drawable/bg_feature_icon_box"
+                    android:padding="10dp"
+                    android:contentDescription="Transfer" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Transfer"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#222222" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="BANK MANDIRI -\n8817000002645900\nRp3.007.500"
+                        android:textSize="13sp"
+                        android:textColor="#555555"
+                        android:layout_marginTop="2dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="19 Sep 2026 20:51"
+                        android:textSize="12sp"
+                        android:textColor="#888888"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sukses"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:background="@drawable/bg_pill_button"
+                    android:backgroundTint="#00A859"
+                    android:paddingHorizontal="14dp"
+                    android:paddingVertical="5dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E2E8F0" />
+
+            <!-- Item 7: Pembelian QRIS -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="14dp"
+                android:background="@color/white">
+
+                <ImageView
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@drawable/ic_qris"
+                    android:background="@drawable/bg_feature_icon_box"
+                    android:padding="10dp"
+                    android:contentDescription="QRIS" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pembelian QRIS"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#222222" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Indomaret Diponegoro -\n001928374\nRp18.500"
+                        android:textSize="13sp"
+                        android:textColor="#555555"
+                        android:layout_marginTop="2dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="18 Sep 2026 19:30"
+                        android:textSize="12sp"
+                        android:textColor="#888888"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sukses"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:background="@drawable/bg_pill_button"
+                    android:backgroundTint="#00A859"
+                    android:paddingHorizontal="14dp"
+                    android:paddingVertical="5dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E2E8F0" />
+
+            <!-- Item 8: Pembelian PLN -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="14dp"
+                android:background="@color/white">
+
+                <ImageView
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@drawable/ic_payment"
+                    android:background="@drawable/bg_feature_icon_box"
+                    android:padding="10dp"
+                    android:contentDescription="PLN" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pembelian PLN"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#222222" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Token Listrik 50181090155\nRp100.000"
+                        android:textSize="13sp"
+                        android:textColor="#555555"
+                        android:layout_marginTop="2dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="17 Sep 2026 08:15"
+                        android:textSize="12sp"
+                        android:textColor="#888888"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sukses"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:background="@drawable/bg_pill_button"
+                    android:backgroundTint="#00A859"
+                    android:paddingHorizontal="14dp"
+                    android:paddingVertical="5dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E2E8F0" />
+
+            <!-- Item 9: Top Up E-Wallet -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="14dp"
+                android:background="@color/white">
+
+                <ImageView
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@drawable/ic_topup"
+                    android:background="@drawable/bg_feature_icon_box"
+                    android:padding="10dp"
+                    android:contentDescription="Top Up" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Top Up E-Wallet"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#222222" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ShopeePay - 081234567890\nRp150.000"
+                        android:textSize="13sp"
+                        android:textColor="#555555"
+                        android:layout_marginTop="2dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="15 Sep 2026 14:22"
+                        android:textSize="12sp"
+                        android:textColor="#888888"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sukses"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:background="@drawable/bg_pill_button"
+                    android:backgroundTint="#00A859"
+                    android:paddingHorizontal="14dp"
+                    android:paddingVertical="5dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E2E8F0" />
+
+            <!-- Item 10: Transfer -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="14dp"
+                android:background="@color/white">
+
+                <ImageView
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@drawable/ic_transfer"
+                    android:background="@drawable/bg_feature_icon_box"
+                    android:padding="10dp"
+                    android:contentDescription="Transfer" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Transfer"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#222222" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="BRI - 123401001234506\nRp250.000"
+                        android:textSize="13sp"
+                        android:textColor="#555555"
+                        android:layout_marginTop="2dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="14 Sep 2026 10:00"
+                        android:textSize="12sp"
+                        android:textColor="#888888"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sukses"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:background="@drawable/bg_pill_button"
+                    android:backgroundTint="#00A859"
+                    android:paddingHorizontal="14dp"
+                    android:paddingVertical="5dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

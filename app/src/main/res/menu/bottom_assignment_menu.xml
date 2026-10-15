@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_mutasi"
+        android:icon="@drawable/ic_history"
+        android:title="Mutasi" />
+    <item
+        android:id="@+id/menu_aktivitas"
+        android:icon="@drawable/ic_finance_note"
+        android:title="Aktivitas" />
+    <item
+        android:id="@+id/menu_akun"
+        android:icon="@drawable/ic_person"
+        android:title="Akun" />
+</menu>

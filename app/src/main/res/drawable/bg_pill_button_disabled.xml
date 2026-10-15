@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <!-- Abu-abu Solid Terang agar bentuk tombol terlihat tegas saat disabled -->
+    <solid android:color="#B0BEC5" />
+    <corners android:radius="100dp" />
+</shape>

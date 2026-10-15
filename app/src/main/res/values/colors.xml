@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Mobile Banking Theme Colors -->
+    <color name="bank_primary">#0D47A1</color>        <!-- Deep Navy Blue -->
+    <color name="bank_splash_bg">#1888E7</color>      <!-- BRImo Splash Blue -->
+    <color name="bank_primary_dark">#002171</color>   <!-- Darker Navy -->
+    <color name="bank_card">#1E88E5</color>           <!-- Card Blue -->
+    <color name="bank_accent">#FFB300</color>         <!-- Gold Accent -->
+    <color name="bank_bg">#F8FAFC</color>             <!-- Light Slate Gray -->
+    <color name="bank_card_bg">#FFFFFF</color>        <!-- White Card -->
+
+    <color name="text_primary">#0F172A</color>       <!-- Dark Slate Text -->
+    <color name="text_secondary">#64748B</color>     <!-- Muted Gray Text -->
+    <color name="text_hint">#94A3B8</color>          <!-- Light Hint Gray -->
+    <color name="status_green">#10B981</color>       <!-- Income / Success Green -->
+</resources>

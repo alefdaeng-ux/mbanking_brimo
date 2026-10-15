@@ -1,0 +1,22 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="360dp"
+    android:height="360dp"
+    android:viewportWidth="360"
+    android:viewportHeight="360">
+
+    <!-- Layer 1: Latar Belakang Biru Utama dengan Gelombang Bawah -->
+    <path
+        android:fillColor="#1888E7"
+        android:pathData="M0,0 H360 V260 C260,290 100,290 0,260 Z" />
+
+    <!-- Layer 2: Aksen Biru Muda Transparan Kanan Atas (Sekitar Kontak Kami) -->
+    <path
+        android:fillColor="#25FFFFFF"
+        android:pathData="M180,0 C220,70 280,110 360,130 V0 Z" />
+
+    <!-- Layer 3: Aksen Biru Muda Transparan Kiri Tengah (Di Bawah Slogan) -->
+    <path
+        android:fillColor="#1EFFFFFF"
+        android:pathData="M0,110 C90,130 180,190 260,250 C160,265 60,240 0,220 Z" />
+
+</vector>
